@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+
+  <meta charset="UTF-8">
+  
+<link rel="apple-touch-icon" type="image/png" href="https://cpwebassets.codepen.io/assets/favicon/apple-touch-icon-5ae1a0698dcc2402e9712f7d01ed509a57814f994c660df9f7a952f3060705ee.png" />
+<meta name="apple-mobile-web-app-title" content="CodePen">
+
+<link rel="shortcut icon" type="image/x-icon" href="https://cpwebassets.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico" />
+
+<link rel="mask-icon" type="" href="https://cpwebassets.codepen.io/assets/favicon/logo-pin-8f3771b1072e3c38bd662872f6b673a722f4b3ca2421637d5596661b4e2132cc.svg" color="#111" />
+
+
+  <title>CodePen - 2075-9</title>
+  
+  
+  
+  
+<style>
+.flex-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: nowrap;
+  background-color: rgb(93,138,168);
+}
+
+.flex-container > div {
+  background-color: #D7E2E9;
+  width: 250px;
+  margin: 10px;
+  text-align: center;
+  line-height: 150px;
+  font-size: 30px;
+  background-image: url(http://www.ospreypacks.com/stories/wp-content/uploads/2011/04/Osprey-3.jpg)
+}
+</style>
+
+  
+  
+  
+  
+
+</head>
+
+<body translate="no" >
+  <h1>Zeitmesser</h1>
+
+<div class = "flex-container">
+  <div id = "title1">Stunden</div>
+  <div id = "title2">Minuten</div>
+  <div id = "title3">Sekunden</div>
+  <div id = "title4">Millisekunden</div>
+  
+</div>
+
+<div class = break></div>
+
+<div class="flex-container">
+  <div id="hours">1</div>
+  <div id="minutes">2</div>
+  <div id="seconds">3</div>  
+  <div id="milliseconds">4</div>
+     
+  
+</div>
+  
+  
+      <script id="rendered-js" >
+console.clear();
+console.log("hello world");
+
+const numNames = ["Null", "Eins", "Zwei", "Drei", "Vier", "Funf", "Sechs", "Sieben", "Acht", "Neun", "Zehn"];
+numNames.push("Elf");
+numNames.push("Zwölf");
+
+function updateTime(){
+  const d = new Date();
+  
+  let mls = d.getMilliseconds();
+  console.log(mls);  
+  if(mls < numNames.length){
+    mls = numNames[mls];
+  }
+  document.getElementById("milliseconds").innerHTML = mls;
+  
+  
+  let secs = d.getSeconds();
+  console.log(secs);  
+  if(secs < numNames.length){
+    secs = numNames[secs];
+  }
+  document.getElementById("seconds").innerHTML = secs;
+  
+  
+  let mins = d.getMinutes();
+  console.log(mins);  
+  if(mins < numNames.length){
+    mins = numNames[mins];
+  }
+  document.getElementById("minutes").innerHTML = mins;
+  
+  
+  let hrs = d.getHours();
+  console.log(hrs);  
+  if(hrs < numNames.length){
+    hrs = numNames[hrs];
+  }
+  document.getElementById("hours").innerHTML = hrs;
+  
+}
+
+updateTime();
+setInterval(updateTime,1);
+    </script>
+
+  
+
+</body>
+
+</html>
