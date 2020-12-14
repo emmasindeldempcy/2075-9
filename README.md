@@ -1,2 +1,2 @@
 # 2075-9
-German Clock
+German Clock for Gary Anderson's Class 
